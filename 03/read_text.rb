@@ -1,41 +1,18 @@
 # encoding:utf-8
+$LOAD_PATH.unshift(File.dirname(__FILE__)) unless $LOAD_PATH.include?(File.dirname(__FILE__))
 
 filename = File.expand_path('../text.txt', __FILE__);
 
+require 'file_reader'
 
-def readfile1(filename)
-  puts '----------file 1-------------------'
-  file = File.open(filename)
-  text = file.read()
-  print text
-  file.close()
-end
+reader = FileReader.new(filename)
+reader2 = FileReader.new(filename)
 
-def readfile2(filename)
-  puts '----------file 2------------------'
-  file = File.open(filename)
-  file.each_line{|line| print line ;}
-  file.close
-end
+# puts $0,$:,$$
 
-def readfile3(filename)
-  puts '----------file 3-----------------'
-  file = File.open(filename)
-  file.each_line do |line|
-    print line
-  end
-  file.close
-end
+puts FileReader::PI,FileReader::get_instance_count
 
-def readfile4(filename)
-  puts '----------file 4-----------------'
-  file = File.open(filename)
-  file.each_line do |line|
-    if /123456/ =~ line
-      print line
-    end
-  end
-  file.close
-end
-
-
+# reader.readfile1(filename)
+# reader.readfile2 filename
+# reader.readfile3 filename
+reader.readfile4 filename
