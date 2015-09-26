@@ -15,6 +15,7 @@ class FileReader
 
   def readfile1(filename=nil)
     puts '----------file 1-------------------'
+    filename = self.getfilename(filename)
     file = File.open(filename)
     text = file.read()
     print text
@@ -23,6 +24,7 @@ class FileReader
 
   def readfile2(filename=nil)
     puts '----------file 2------------------'
+    filename = self.getfilename(filename)
     file = File.open(filename)
     file.each_line { |line| print line; }
     file.close
@@ -30,6 +32,7 @@ class FileReader
 
   def readfile3(filename=nil)
     puts '----------file 3-----------------'
+    filename = self.getfilename(filename)
     file = File.open(filename)
     file.each_line do |line|
       print line
@@ -39,6 +42,7 @@ class FileReader
 
   def readfile4(filename=nil)
     puts '----------file 4-----------------'
+    filename = self.getfilename(filename)
     file = File.open(filename)
     file.each_line do |line|
       if /123456/ =~ line
@@ -46,6 +50,14 @@ class FileReader
       end
     end
     file.close
+  end
+
+  def getfilename(filename)
+    if filename.nil?
+      return @file
+    else
+      return filename
+    end
   end
 
 

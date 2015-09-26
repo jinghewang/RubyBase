@@ -13,6 +13,10 @@ reader2 = FileReader.new(filename)
 puts FileReader::PI,FileReader::get_instance_count
 
 # reader.readfile1(filename)
-# reader.readfile2 filename
-# reader.readfile3 filename
-reader.readfile4 filename
+# reader.readfile2
+# reader.readfile3
+reader.readfile4
+
+require 'date'
+puts Date.today, Date.new(2001, 2, 3)
+
