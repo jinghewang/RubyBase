@@ -11,4 +11,13 @@ module Me
   def hello(name='wjh')
     puts "hello #{name}"
   end
+
+
+  def ppp(*args)
+    for item in args
+      print "#{item}\t"
+    end
+    print "\n"
+  end
+
 end
