@@ -39,3 +39,18 @@ case param
     print 'other'
 end
 
+
+array = ["a",1,nil]
+array.each do |item|
+  puts "current item:#{item}"
+  case item
+    when String
+      puts 'This is string'
+    when Numeric
+      puts 'This is numeris'
+    else
+      puts 'This is other something.'
+  end
+end
+
+p /zzz/ === "wewazzzzlk",String === "sdsds", (1..3) === 2
