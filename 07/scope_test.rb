@@ -10,6 +10,20 @@ END{  puts '---------end------------'}
 
 puts '----------参数个数-----------------'
 
+v1 = 1
+class MyClass
+  v2 = 2
+  puts local_variables.to_s + "call 1"  # => [:v2]call 1
+  def my_method
+    v3 = 3
+    puts local_variables.to_s + " call 2"
+  end
+  puts local_variables.to_s + "call 3"  # => [:v2]call 3
+end
+
+obj = MyClass.new
+obj.my_method                           # =>[:v3] call 2
+puts local_variables.to_s + "call 4"    # =>[:v1, :obj]call 4
 
 
 
