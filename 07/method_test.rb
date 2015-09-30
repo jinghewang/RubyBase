@@ -43,6 +43,23 @@ def area2(x:0, y:1, z:4)
   (xy + yz + zx) * 2
 end
 
+def area3(x:0, y:1, z:4, **args)
+  xy = x * y
+  yz = y * z
+  zx = z * x
+  p args
+  (xy + yz + zx) * 2
+end
+
+def func(a, b:2, c:3)
+  a + b + c
+end
+
+def func2(a, b, c)
+  ppp a, b, c
+end
+
+
 # 此种方式不能实现关键字参数
 def bb2(a=1,b=2)
 
@@ -60,8 +77,13 @@ ppp foo3('wjh','zz','qq')
 a(11,22,33,44)
 ppp area1(x: 2, y: 3, z: 4), area1(x: 2, z: 4, y: 3)
 ppp area2(x: 2, y: 3, z: 4),area2(x: 2, y: 3), area2(x: 2, z: 4, y: 3)
+ppp area3(x: 2, z: 4, y: 3, u:12, w:334)
 ppp bb(a:2,b:3),bb({a:2,b:3}), bb(b:4, a:3)
+ppp func(2,b:3, c:4),func(1),func(1, c:4, b:7)
+ppp func(2,{c:5, b:6}),func(2,{c:5})
 
+list = [2, 3]
+ppp func2(1,2,3),func2(1,*list)
 exit;
 
 # 对象方法
