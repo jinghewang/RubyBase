@@ -12,6 +12,10 @@ module Me
     puts "hello #{name}"
   end
 
+  def get_file_name(name)
+    return File.expand_path(name, __FILE__)
+  end
+
 
   def ppp(*args)
     for item in args
