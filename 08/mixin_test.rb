@@ -1,5 +1,6 @@
 # encoding:utf-8
 $LOAD_PATH.unshift(File.dirname(__FILE__)) unless $LOAD_PATH.include?(File.dirname(__FILE__))
+$LOAD_PATH.unshift(File.expand_path('../../base', __FILE__)) unless $LOAD_PATH.include?(File.expand_path('../../base', __FILE__))
 $LOAD_PATH.unshift(File.expand_path('../../modules', __FILE__)) unless $LOAD_PATH.include?(File.expand_path('../../modules', __FILE__))
 
 
@@ -42,3 +43,8 @@ p C.include?(M1)
 # 查看调用关系
 p C.ancestors()
 p C.superclass()
+
+require 'helper'
+Helper::dividing_line('is_a')
+s = "ssds sss"
+p s.is_a?(String)

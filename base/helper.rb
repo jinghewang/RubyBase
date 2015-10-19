@@ -10,4 +10,10 @@ class Helper
     end
   end
 
+  def self.dividing_line(title, prechar='*', sufchar='*', prelength=20, suflength=20)
+    msg = prechar*prelength + title + sufchar*suflength
+    puts msg
+    return msg
+  end
+
 end
