@@ -44,7 +44,12 @@ p C.include?(M1)
 p C.ancestors()
 p C.superclass()
 
+
+# 新的测试内容
 require 'helper'
+require 'me'
+include Me
 Helper::dividing_line('is_a')
 s = "ssds sss"
-p s.is_a?(String)
+ppp s.is_a?(String), s.is_a?(Object)
+p 1.class,1.0.class

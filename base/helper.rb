@@ -10,6 +10,12 @@ class Helper
     end
   end
 
+  # @param String title
+  # @param String prechar
+  # @param String sufchar
+  # @param Integer prelength
+  # @param Integer suflength
+  # @return String
   def self.dividing_line(title, prechar='*', sufchar='*', prelength=20, suflength=20)
     msg = prechar*prelength + title + sufchar*suflength
     puts msg
