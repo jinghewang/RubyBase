@@ -28,4 +28,9 @@ class Helper
     puts name
   end
 
+
+  def self.load(*arr)
+     arr.each { |item| puts item }
+  end
+
 end

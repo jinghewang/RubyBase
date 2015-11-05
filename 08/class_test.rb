@@ -12,6 +12,8 @@ require 'me.rb'
 # include modules
 include Me
 
+
+
 # define begin and end
 BEGIN{  puts '--------begin-----------'}
 END{  puts '---------end------------'}
@@ -37,5 +39,6 @@ puts '----------------class--------------'
 
 Helper.dividing_line(' class ','>','<')
 
+Helper.load(123,456)
 
 p ary.class
