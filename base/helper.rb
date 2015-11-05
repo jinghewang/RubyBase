@@ -22,4 +22,10 @@ class Helper
     return msg
   end
 
+
+  # @param String name
+  def test(name)
+    puts name
+  end
+
 end
